@@ -1,2 +1,15 @@
 Check the PSModulePath Environment variable on a system: $Env:PSModulePath
 Check the Powershell version: $PSVersionTable.PSVersion
+Update Powershell on a Win2012R2 Server:
+        - Download and install Win8.1AndW2K12R2-KB3191564-x64.msu 
+		- Restart Server
+Install VMware PowerCLI Module
+		- Find-Module -Name VMware.PowerCLI
+		- Install-Module -Name VMware.PowerCLI -Scope CurrentUser
+Set-PowerCLIConfiguration Options
+		- #Set the participation to false and ignore invalid certificates for all users
+			Set-PowerCLIConfiguration -Scope AllUsers -ParticipateInCeip $false -InvalidCertificateAction Ignore 
+		- #Connect to our vCenter Server using the logged in credentials
+			Connect-VIServer IP or Hostname
+	    - #Get a list of Virtual Machines
+			Get-VM
