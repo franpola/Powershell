@@ -1,1 +1,2 @@
 Check the PSModulePath Environment variable on a system: $Env:PSModulePath
+Check the Powershell version: $PSVersionTable.PSVersion
