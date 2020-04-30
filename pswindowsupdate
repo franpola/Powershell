@@ -1,0 +1,3 @@
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Install-PackageProvider -name nuget -MinimumVersion 2.8.5.201 -force
+ install-module -name pswindowsupdate -RequiredVersion 2.1.1.2
